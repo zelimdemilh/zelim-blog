@@ -16,7 +16,7 @@ app.use(cors());
 app.use(require("./routes"));
 
 mongoose
-  .connect("mongodb+srv://zelim:nikulikolai123@cluster0.15m8o.mongodb.net/blog?retryWrites=true&w=majority")
+  .connect("mongodb+srv://zelim:nikulikolai123@cluster0")
   .then(() => {
     console.log("connected");
     app.listen(port, () => {

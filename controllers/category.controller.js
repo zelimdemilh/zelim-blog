@@ -5,6 +5,7 @@ module.exports.categoryController = {
   getAllCategories: async (req, res) => {
     try {
       const response = await Category.find();
+      console.log(123);
       res.status(200).json(response);
     } catch (e) {
       res.status(400).json({ error: e.toString() });
