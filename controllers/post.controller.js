@@ -10,18 +10,18 @@ module.exports.postController = {
       res.status(400).json({ error: e.toString() });
     }
   },
-  getPostById: async (req, res) => {
-    try {
-      const posts = await Post.find({ id: req.params.id });
-      res.status(200).json(posts);
-    } catch (e) {
-      res.status(400).json({ error: e.toString() });
-    }
-  },
   getAllPosts: async (req, res) => {
     try {
       const response = await Post.find();
       res.status(200).json(response);
+    } catch (e) {
+      res.status(400).json({ error: e.toString() });
+    }
+  },
+  getPostById: async (req, res) => {
+    try {
+      const posts = await Post.find({ _id: req.params.id });
+      res.status(200).json(posts);
     } catch (e) {
       res.status(400).json({ error: e.toString() });
     }

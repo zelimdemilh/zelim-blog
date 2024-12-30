@@ -14,7 +14,7 @@ const mongoose = require("mongoose");
 const postSchema = mongoose.Schema({
   categoryId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Category",
+    ref: "categories",
     required: true,
   },
   title: { type: String, required: true },
@@ -22,6 +22,6 @@ const postSchema = mongoose.Schema({
   image: { type: String, required: true },
 });
 
-const Post = mongoose.model("Post", postSchema);
+const Post = mongoose.model("posts", postSchema);
 
 module.exports = Post;
